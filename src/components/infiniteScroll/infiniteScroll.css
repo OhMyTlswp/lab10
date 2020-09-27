@@ -1,0 +1,15 @@
+.infinite-scroll {
+  height: 600px;
+  width: 700px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+.infinite-scroll::-webkit-scrollbar {
+  background: none;
+  height: 2px;
+  width: 2px;
+}
+.infinite-scroll::-webkit-scrollbar-thumb {
+  background-color: rgb(85, 85, 85);
+}

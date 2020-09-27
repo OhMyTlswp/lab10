@@ -1,0 +1,7 @@
+.giphy-list {
+  /* max-width: 620px;
+  columns: 3;
+  column-gap: 10px; */
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+}
