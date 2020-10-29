@@ -1,11 +1,11 @@
-import React from 'react';
-import { view } from '@risingstack/react-easy-state';
-import './giphyListItem.css';
-import PropTypes from 'prop-types';
+import React from "react";
+import { view } from "@risingstack/react-easy-state";
+import "./giphyListItem.css";
+import PropTypes from "prop-types";
 function GiphyListItem(props) {
   return (
     <div className="giphy-list_item">
-      <img alt="" src={props.url} className="giphy-list_item_img" />
+      <img lazy alt="" src={props.url} className="giphy-list_item_img" />
       <a target="1" href={props.bitlyUrl} className="giphy-list_item_title">
         {props.title}
       </a>
