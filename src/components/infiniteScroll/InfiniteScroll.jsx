@@ -1,17 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { view } from '@risingstack/react-easy-state';
 import './infiniteScroll.css';
 import infiniteScrollHandler from '../../actions/infiniteScrollHandler';
-import PropTypes from 'prop-types';
-function InfiniteScroll(props) {
+import gifsRequestOnScroll from '../../actions/gifsRequestOnScroll';
+
+function InfiniteScroll({ mod, children }) {
   return (
-    <div onScroll={infiniteScrollHandler} className={props.mod ? 'infinite-scroll ' : 'infinite-scroll ' + props.mod}>
-      {props.children}
+    <div
+      onScroll={(event) => {
+        infiniteScrollHandler(event, gifsRequestOnScroll);
+      }}
+      className={mod ? `infinite-scroll ${mod}` : 'infinite-scroll '}
+    >
+      {children}
     </div>
   );
 }
+InfiniteScroll.defaultProps = {
+  mod: null,
+};
 InfiniteScroll.propTypes = {
-  mod: PropTypes.string,
+  mod: PropTypes.element,
   children: PropTypes.element.isRequired,
 };
+
 export default view(InfiniteScroll);

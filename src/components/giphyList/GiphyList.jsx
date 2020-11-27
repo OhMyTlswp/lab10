@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { view } from '@risingstack/react-easy-state';
-import GiphyListItem from '../giphyListItem/GiphyListItem';
+import GiphyListItem from '../GiphyListItem/GiphyListItem';
 import './giphyList.css';
 import state from '../../store';
 import gifsRequest from '../../actions/gifsRequest';
+
 function GiphyList() {
   useEffect(() => {
     gifsRequest();
@@ -16,4 +17,5 @@ function GiphyList() {
     </div>
   );
 }
+
 export default view(GiphyList);
